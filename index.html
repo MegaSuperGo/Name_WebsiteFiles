@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6f0ec3; -webkit-text-stroke: #6f0ec3}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #18702b; -webkit-text-stroke: #18702b}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0e6e6d; -webkit-text-stroke: #0e6e6d}
+    span.s1 {font-kerning: none; color: #6f0ec3; background-color: #ecf1f7; -webkit-text-stroke: 0px #6f0ec3}
+    span.s2 {font-kerning: none; background-color: #ecf1f7}
+    span.s3 {font-kerning: none; color: #0e6e6d; background-color: #ecf1f7; -webkit-text-stroke: 0px #0e6e6d}
+    span.s4 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
+    span.s5 {font-kerning: none}
+    span.s6 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
+    span.s7 {font-kerning: none; color: #a4450b; background-color: #ecf1f7; -webkit-text-stroke: 0px #a4450b}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">import</span><span class="s2"> </span><span class="s3">React</span><span class="s2">, { useRef } </span><span class="s1">from</span><span class="s2"> </span><span class="s4">'react'</span><span class="s2">;</span></p>
+<p class="p1"><span class="s1">import</span><span class="s2"> { motion, useInView } </span><span class="s1">from</span><span class="s2"> </span><span class="s4">'framer-motion'</span><span class="s2">;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s2">// Main App component</span></p>
+<p class="p1"><span class="s1">const</span><span class="s2"> </span><span class="s3">App</span><span class="s2"> = () =&gt; {</span></p>
+<p class="p4"><span class="s6"><span class="Apple-converted-space">  </span></span><span class="s2">return</span><span class="s6"> (</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">    </span>&lt;div className=</span><span class="s2">"min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white font-sans overflow-hidden"</span><span class="s6">&gt;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Tailwind CSS CDN - Not needed in actual React setup, but good for standalone HTML */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>&lt;script src=</span><span class="s2">"https://cdn.tailwindcss.com"</span><span class="s6">&gt;&lt;/script&gt;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Google Fonts - Inter */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>&lt;link href=</span><span class="s2">"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"</span><span class="s6"> rel=</span><span class="s2">"stylesheet"</span><span class="s6"> /&gt;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Header */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>&lt;header className=</span><span class="s2">"py-6 px-4 md:px-8 lg:px-16 flex justify-between items-center relative z-10"</span><span class="s6">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;motion.div</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: -</span><span class="s7">20</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>animate={{ opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>transition={{ duration: </span><span class="s7">0.5</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span>className=</span><span class="s2">"text-3xl font-extrabold text-white tracking-tight"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s3">NameIt</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/motion.div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;nav&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;ul className=</span><span class="s4">"flex space-x-6"</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">            </span>{</span><span class="s2">/* Removed Portfolio link as the section is removed */</span><span class="s6">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>{[</span><span class="s4">'Home'</span><span class="s2">, </span><span class="s4">'Services'</span><span class="s2">, </span><span class="s4">'Contact'</span><span class="s2">].map((item, index) =&gt; (</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;motion.li</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>key={item}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: -</span><span class="s7">20</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>animate={{ opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>transition={{ duration: </span><span class="s7">0.5</span><span class="s2">, delay: </span><span class="s7">0.1</span><span class="s2"> * index }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&gt;</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">                </span>&lt;a href={</span><span class="s2">`#</span><span class="s6">${item.toLowerCase()}</span><span class="s2">`</span><span class="s6">} className=</span><span class="s2">"text-lg font-medium hover:text-purple-300 transition duration-300"</span><span class="s6">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                  </span>{item}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/a&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">              </span>&lt;/motion.li&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>))}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Hero Section */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>&lt;section id=</span><span class="s2">"home"</span><span class="s6"> className=</span><span class="s2">"relative flex items-center justify-center min-h-[calc(100vh-80px)] px-4 md:px-8 lg:px-16 text-center"</span><span class="s6">&gt;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">        </span>{</span><span class="s2">/* Background gradient animation */</span><span class="s6">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;motion.div</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>initial={{ scale: </span><span class="s7">0.8</span><span class="s2">, opacity: </span><span class="s7">0</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>animate={{ scale: </span><span class="s7">1</span><span class="s2">, opacity: </span><span class="s7">1</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>transition={{ duration: </span><span class="s7">1</span><span class="s2">, ease: </span><span class="s4">"easeOut"</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span>className=</span><span class="s2">"absolute inset-0 bg-gradient-to-br from-purple-700 to-pink-500 opacity-20 rounded-full blur-3xl"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>style={{ width: </span><span class="s4">'80%'</span><span class="s2">, height: </span><span class="s4">'80%'</span><span class="s2">, margin: </span><span class="s4">'auto'</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&gt;&lt;/motion.div&gt;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">        </span>&lt;div className=</span><span class="s2">"relative z-10 max-w-4xl mx-auto"</span><span class="s6">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;motion.h1</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: </span><span class="s7">50</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>animate={{ opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>transition={{ duration: </span><span class="s7">0.8</span><span class="s2">, ease: </span><span class="s4">"easeOut"</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">            </span>className=</span><span class="s2">"text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&gt;</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">            </span></span><span class="s3">Your</span><span class="s6"> </span><span class="s3">Brand</span><span class="s2">'s Global Identity Starts Here.</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/motion.h1&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;motion.p</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: </span><span class="s7">50</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>animate={{ opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>transition={{ duration: </span><span class="s7">0.8</span><span class="s2">, delay: </span><span class="s7">0.2</span><span class="s2">, ease: </span><span class="s4">"easeOut"</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">            </span>className=</span><span class="s2">"text-xl md:text-2xl text-purple-200 mb-10"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">Crafting</span><span class="s2"> iconic names and unforgettable logos </span><span class="s1">for</span><span class="s2"> international recognition.</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/motion.p&gt;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">          </span>{</span><span class="s2">/* Discover Our Magic button - linking to the services section */</span><span class="s6">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;motion.a</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">            </span>href=</span><span class="s4">"#services"</span><span class="s6"> </span><span class="s2">// Link to the services section</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, scale: </span><span class="s7">0.8</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>animate={{ opacity: </span><span class="s7">1</span><span class="s2">, scale: </span><span class="s7">1</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>transition={{ duration: </span><span class="s7">0.6</span><span class="s2">, delay: </span><span class="s7">0.4</span><span class="s2">, ease: </span><span class="s4">"easeOut"</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">            </span>className=</span><span class="s2">"inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transform transition duration-300 hover:scale-105"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&gt;</span></p>
+<p class="p6"><span class="s6"><span class="Apple-converted-space">            </span></span><span class="s2">Discover</span><span class="s6"> </span><span class="s2">Our</span><span class="s6"> </span><span class="s2">Magic</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;/motion.a&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* About Section */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>&lt;</span><span class="s3">Section</span><span class="s6"> id=</span><span class="s2">"about"</span><span class="s6"> title=</span><span class="s2">"Unleash Your Brand's Potential"</span><span class="s6"> description=</span><span class="s2">"At NameIt, we believe a great name and a powerful logo are the cornerstones of global success. We're not just creators; we're architects of identity, building brands that resonate across cultures and continents."</span><span class="s6"> /&gt;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Services Section */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>&lt;section id=</span><span class="s2">"services"</span><span class="s6"> className=</span><span class="s2">"py-20 px-4 md:px-8 lg:px-16 bg-purple-900/20 rounded-3xl mx-4 md:mx-8 my-10"</span><span class="s6">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;motion.h2</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: -</span><span class="s7">30</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>whileInView={{ opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>viewport={{ once: </span><span class="s1">true</span><span class="s2">, amount: </span><span class="s7">0.5</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>transition={{ duration: </span><span class="s7">0.6</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span>className=</span><span class="s2">"text-4xl md:text-5xl font-extrabold text-center mb-16 drop-shadow-md"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&gt;</span></p>
+<p class="p6"><span class="s6"><span class="Apple-converted-space">          </span></span><span class="s2">Our</span><span class="s6"> </span><span class="s2">Signature</span><span class="s6"> </span><span class="s2">Services</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/motion.h2&gt;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">        </span>{</span><span class="s2">/* Adjusted grid to 2 columns for better layout with 2 service cards */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">        </span>&lt;div className=</span><span class="s2">"grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto"</span><span class="s6">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;</span><span class="s3">ServiceCard</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>icon=</span><span class="s4">"✨"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>title=</span><span class="s4">"Strategic Naming"</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">            </span>description=</span><span class="s2">"We delve deep into your vision, market, and audience to forge names that are memorable, pronounceable, and legally viable worldwide."</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>delay={</span><span class="s7">0</span><span class="s2">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>/&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>&lt;</span><span class="s3">ServiceCard</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>icon=</span><span class="s4">"🎨"</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">            </span>title=</span><span class="s2">"Iconic Logo Design"</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">            </span>description=</span><span class="s2">"From concept to creation, our designers craft visually stunning logos that encapsulate your brand's essence and leave a lasting impression."</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">            </span>delay={</span><span class="s7">0.2</span><span class="s2">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>/&gt;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">          </span>{</span><span class="s2">/* Removed Global Brand Strategy ServiceCard */</span><span class="s6">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Call to Action / Contact Section */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>&lt;section id=</span><span class="s2">"contact"</span><span class="s6"> className=</span><span class="s2">"py-20 px-4 md:px-8 lg:px-16 text-center bg-pink-900/20 rounded-3xl mx-4 md:mx-8 my-10"</span><span class="s6">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;motion.h2</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: -</span><span class="s7">30</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>whileInView={{ opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>viewport={{ once: </span><span class="s1">true</span><span class="s2">, amount: </span><span class="s7">0.5</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>transition={{ duration: </span><span class="s7">0.6</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span>className=</span><span class="s2">"text-4xl md:text-5xl font-extrabold mb-8 drop-shadow-md"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s3">Ready</span><span class="s2"> to </span><span class="s3">Make</span><span class="s2"> </span><span class="s3">Your</span><span class="s2"> </span><span class="s3">Mark</span><span class="s2">?</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/motion.h2&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;motion.p</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: -</span><span class="s7">30</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>whileInView={{ opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>viewport={{ once: </span><span class="s1">true</span><span class="s2">, amount: </span><span class="s7">0.5</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>transition={{ duration: </span><span class="s7">0.6</span><span class="s2">, delay: </span><span class="s7">0.2</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span>className=</span><span class="s2">"text-xl md:text-2xl text-purple-200 mb-12 max-w-2xl mx-auto"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&gt;</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span></span><span class="s3">Let</span><span class="s2">'s collaborate to craft greatness that will propel your company to international recognition.</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/motion.p&gt;</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">        </span>{</span><span class="s2">/* Get in Touch Today button - linking to a Google Form */</span><span class="s6">}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;motion.a</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">          </span>href=</span><span class="s4">"https://forms.gle/1KTzsgg5U4uX6w4AA"</span><span class="s6"> </span><span class="s2">// Replace with your actual Google Form link</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">          </span>target=</span><span class="s4">"_blank"</span><span class="s6"> </span><span class="s2">// Opens in a new tab</span></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">          </span>rel=</span><span class="s4">"noopener noreferrer"</span><span class="s6"> </span><span class="s2">// Security best practice for target="_blank"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, scale: </span><span class="s7">0.8</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>whileInView={{ opacity: </span><span class="s7">1</span><span class="s2">, scale: </span><span class="s7">1</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>viewport={{ once: </span><span class="s1">true</span><span class="s2">, amount: </span><span class="s7">0.5</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">          </span>transition={{ duration: </span><span class="s7">0.6</span><span class="s2">, delay: </span><span class="s7">0.4</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span>className=</span><span class="s2">"inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transform transition duration-300 hover:scale-105"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&gt;</span></p>
+<p class="p6"><span class="s6"><span class="Apple-converted-space">          </span></span><span class="s2">Fill</span><span class="s6"> </span><span class="s2">Out</span><span class="s6"> </span><span class="s2">Our</span><span class="s6"> </span><span class="s2">Inquiry</span><span class="s6"> </span><span class="s2">Form</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/motion.a&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s6"><span class="Apple-converted-space">      </span>{</span><span class="s2">/* Footer */</span><span class="s6">}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>&lt;footer className=</span><span class="s2">"py-10 px-4 md:px-8 lg:px-16 text-center text-purple-300 text-sm"</span><span class="s6">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;p&gt;&amp;copy; {</span><span class="s1">new</span><span class="s2"> </span><span class="s3">Date</span><span class="s2">().getFullYear()} </span><span class="s3">NameIt</span><span class="s2">. </span><span class="s3">All</span><span class="s2"> rights reserved.&lt;/p&gt;</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">        </span>&lt;div className=</span><span class="s2">"flex justify-center space-x-4 mt-4"</span><span class="s6">&gt;</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span>&lt;a href=</span><span class="s2">"#"</span><span class="s6"> className=</span><span class="s2">"hover:text-white transition duration-300"</span><span class="s6">&gt;</span><span class="s3">Privacy</span><span class="s6"> </span><span class="s3">Policy</span><span class="s6">&lt;/a&gt;</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">          </span>&lt;a href=</span><span class="s2">"#"</span><span class="s6"> className=</span><span class="s2">"hover:text-white transition duration-300"</span><span class="s6">&gt;</span><span class="s3">Terms</span><span class="s6"> </span><span class="s1">of</span><span class="s6"> </span><span class="s3">Service</span><span class="s6">&lt;/a&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/footer&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span>);</span></p>
+<p class="p1"><span class="s2">};</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s2">// Reusable Section Component</span></p>
+<p class="p1"><span class="s1">const</span><span class="s2"> </span><span class="s3">Section</span><span class="s2"> = ({ id, title, description }) =&gt; {</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s2"> ref = useRef(</span><span class="s1">null</span><span class="s2">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s2"> isInView = useInView(ref, { once: </span><span class="s1">true</span><span class="s2">, amount: </span><span class="s7">0.5</span><span class="s2"> });</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p4"><span class="s6"><span class="Apple-converted-space">  </span></span><span class="s2">return</span><span class="s6"> (</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>&lt;section id={id} ref={ref} className=</span><span class="s4">"py-20 px-4 md:px-8 lg:px-16 text-center"</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;motion.h2</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: -</span><span class="s7">30</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>animate={isInView ? { opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> } : {}}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>transition={{ duration: </span><span class="s7">0.6</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">        </span>className=</span><span class="s2">"text-4xl md:text-5xl font-extrabold mb-8 drop-shadow-md"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>{title}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/motion.h2&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;motion.p</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: -</span><span class="s7">30</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>animate={isInView ? { opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> } : {}}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>transition={{ duration: </span><span class="s7">0.6</span><span class="s2">, delay: </span><span class="s7">0.2</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">        </span>className=</span><span class="s2">"text-xl md:text-2xl text-purple-200 max-w-3xl mx-auto"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">        </span>{description}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;/motion.p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/section&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span>);</span></p>
+<p class="p1"><span class="s2">};</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p3"><span class="s2">// Reusable Service Card Component</span></p>
+<p class="p1"><span class="s1">const</span><span class="s2"> </span><span class="s3">ServiceCard</span><span class="s2"> = ({ icon, title, description, delay }) =&gt; {</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s2"> ref = useRef(</span><span class="s1">null</span><span class="s2">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span></span><span class="s1">const</span><span class="s2"> isInView = useInView(ref, { once: </span><span class="s1">true</span><span class="s2">, amount: </span><span class="s7">0.5</span><span class="s2"> });</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p4"><span class="s6"><span class="Apple-converted-space">  </span></span><span class="s2">return</span><span class="s6"> (</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>&lt;motion.div</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>ref={ref}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>initial={{ opacity: </span><span class="s7">0</span><span class="s2">, y: </span><span class="s7">50</span><span class="s2"> }}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>animate={isInView ? { opacity: </span><span class="s7">1</span><span class="s2">, y: </span><span class="s7">0</span><span class="s2"> } : {}}</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>transition={{ duration: </span><span class="s7">0.6</span><span class="s2">, delay: delay, ease: </span><span class="s4">"easeOut"</span><span class="s2"> }}</span></p>
+<p class="p5"><span class="s6"><span class="Apple-converted-space">      </span>className=</span><span class="s2">"bg-purple-800/40 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-purple-700/50 flex flex-col items-center text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl"</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;div className=</span><span class="s4">"text-6xl mb-6"</span><span class="s2">&gt;{icon}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;h3 className=</span><span class="s4">"text-3xl font-bold mb-4"</span><span class="s2">&gt;{title}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">      </span>&lt;p className=</span><span class="s4">"text-lg text-purple-200"</span><span class="s2">&gt;{description}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/motion.div&gt;</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">  </span>);</span></p>
+<p class="p1"><span class="s2">};</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+<p class="p4"><span class="s2">export</span><span class="s6"> </span><span class="s2">default</span><span class="s6"> </span><span class="s3">App</span><span class="s6">;</span></p>
+<p class="p2"><span class="s5"></span><br></p>
+</body>
+</html>
